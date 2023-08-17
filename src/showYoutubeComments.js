@@ -12,9 +12,9 @@ function swapCommentsAndWatchNext() {
 	if (!panelsContainNodes()) {
 		return;
 	}
-	let commentsNode = leftPanel().removeChild(comments());
+	let commentsNode = leftBelowPanel().removeChild(comments());
 	let watchNextNode = rightPanel().removeChild(watchNext());
-	leftPanel().appendChild(watchNextNode);
+	leftBelowPanel().appendChild(watchNextNode);
 	rightPanel().appendChild(commentsNode);
 }
 
@@ -27,13 +27,13 @@ function watchNext() {
 }
 
 function panelsContainNodes() {
-	return leftPanel().contains(comments()) && rightPanel().contains(watchNext());
+	return leftBelowPanel().contains(comments()) && rightPanel().contains(watchNext());
 }
 
 function rightPanel() {
 	return document.getElementById('secondary-inner');
 }
 
-function leftPanel() {
-	return document.getElementById('primary-inner');
+function leftBelowPanel() {
+	return document.getElementById('below');
 }
